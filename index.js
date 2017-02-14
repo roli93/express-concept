@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
 
-var User = require('./model/user.js')
+import User from './model/user.js';
 
 mongoose.connect('mongodb://127.0.0.1:27017');
 
@@ -16,17 +16,8 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
   console.log('we are connected!');
 
-  var userSchema = mongoose.Schema({
-      firstName: String,
-      lastName: String,
-      age: Number,
-      username: String,
-      password: String,
-
-  });
-
   var john = new User({
-        firstName: 'John2',
+        firstName: 'JohnV',
         lastName: 'Smith',
         age: 45,
         username: 'johnnysmith',
