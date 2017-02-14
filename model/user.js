@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import bookSchema from './book.js';
 
 var userSchema = mongoose.Schema({
     firstName: String,
@@ -6,7 +7,10 @@ var userSchema = mongoose.Schema({
     age: Number,
     username: String,
     password: String,
-
+    books: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Book'
+    }]
 });
 
 var User = mongoose.model('User', userSchema);
