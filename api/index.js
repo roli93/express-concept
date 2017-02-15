@@ -4,7 +4,7 @@ import routes from './routes.js';
 var api = express();
 
 api.use(( req, res, next ) => {
-  console.log('Request received');
+  console.log(req.body);
   next();
 });
 

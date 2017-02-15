@@ -1,12 +1,13 @@
 import express from 'express';
+import UserController from '../controllers/user-controller.js';
 
 let routes = express.Router()
 
-routes.get('/user', (req, res) => console.log('get users'));
-routes.post('/user', (req, res) => console.log('post user'));
-routes.get('/user/:userId', (req, res) => console.log('get user'));
-routes.put('/user/:userId', (req, res) => console.log('put user'));
-routes.delete('/user/:userId', (req, res) => console.log('delete user'));
+routes.get('/user', UserController.listUsers);
+routes.post('/user', UserController.createUser);
+routes.get('/user/:userId', UserController.getUser);
+routes.put('/user/:userId', UserController.updateUser);
+routes.delete('/user/:userId', UserController.deleteUser);
 
 routes.get('/book', (req, res) => console.log('get books'));
 routes.post('/book', (req, res) => console.log('post book'));

@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import api from './api';
 
+//This makes Mongoose use ES6 Promises
 mongoose.Promise = Promise;
 
 mongoose.connect('mongodb://127.0.0.1:27017');
