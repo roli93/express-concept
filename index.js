@@ -15,7 +15,7 @@ db.once('open', () => {
   console.log('MongoDB connection successful!')
 
   api.listen(3000, function () {
-    console.log('App listening on port 3000...')
+    console.log('App listening on port 3000...\n')
   })
 
 });
